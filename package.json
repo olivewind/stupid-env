@@ -1,0 +1,26 @@
+{
+  "name": "stupid-env",
+  "version": "0.0.1",
+  "description": "A cli for checking and quickly switching stupid development environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olivewind/stupid-env.git"
+  },
+  "keywords": [
+    "cli",
+    "env",
+    "node",
+    "environments",
+    "switch"
+  ],
+  "author": "olivewind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olivewind/stupid-env/issues"
+  },
+  "homepage": "https://github.com/olivewind/stupid-env#readme"
+}
