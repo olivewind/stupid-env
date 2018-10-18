@@ -1,5 +1,5 @@
 # stupid-env
-A cli for checking and quickly switching stupid development environments
+A cli for checking and quickly switching and persisting environment variables
 
 ## Getting started
 ``` bash
@@ -8,12 +8,13 @@ npm install -g stupid-env
 
 ## Usage
 ``` bash
-stupidenv --h                    # help
-  stupidenv --all                # list all environments
-  stupidenv --ava                # list all available environments
-  stupidenv --config ./config.js # default: ./.stupidenv.js
+stupidenv -h               # help
+  stupidenv -l             # list all environments
+  stupidenv -a             # list all environments and choose one
+  stupidenv -s             # choose an available environment directly
+  stupidenv -o ./env.json # specify environment variable persistence file，default: ./env.json
 ```
-> Once you have selected an environment, the environment variable named API_URL will be set correctly.
+> Once you have selected an environment, the corresponding environment variables will be properly persisted.
 
 
 ``` javascript
@@ -28,7 +29,6 @@ module.exports = {
           return res.data === 'Healthy';
         },
         timeout: 2000, // default: 2000 ms
-        retry: 3 // default: 1
       },
     },
   ],

@@ -1,8 +1,11 @@
 {
   "name": "stupid-env",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A cli for checking and quickly switching stupid development environments",
   "main": "index.js",
+  "bin": {
+    "stupidenv": "./bin/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/olivewind/stupid-env/issues"
   },
-  "homepage": "https://github.com/olivewind/stupid-env#readme"
+  "homepage": "https://github.com/olivewind/stupid-env#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.0",
+    "ora": "^3.0.0"
+  }
 }
