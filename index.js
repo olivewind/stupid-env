@@ -41,6 +41,10 @@ healthcheck(envs)
         }
       });
     }
+    if (res.available.length === 0) {
+      console.warn(chalk.red('No environment available.'));
+      process.exit(0);
+    }
     // 仅仅列出所有环境
     if (defaultView || program.list) return;
     // 选择一个环境并且持久化
