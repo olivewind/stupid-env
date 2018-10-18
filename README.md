@@ -23,6 +23,7 @@ stupidenv -h               # help
 // You need to properly configure the `.stupidenv.js` file in the project root directory.
 module.exports = [
   {
+    name: '182',
     api: 'https://192.168.100.182',
     healthcheck: {
       path: '/dce/healthz', // default: '/'
@@ -33,6 +34,7 @@ module.exports = [
     },
   },
   {
+    name: '100',
     api: 'https://192.168.100.100',
     healthcheck: {
       path: '/dce/healthz',

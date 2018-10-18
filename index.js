@@ -6,6 +6,7 @@ const chalk = require('chalk');
 const healthcheck = require('./packages/healthcheck');
 const writeEnv = require('./packages/write-env');
 const readConfig = require('./packages/read-config');
+const init = require('./packages/init');
 const package = require('./package.json');
 
 program
@@ -15,11 +16,17 @@ program
   .option('-s, --select', 'select an available environment directly')
   // .option('-c, --config [file]', 'specify a configuration file', './.stupidenv.js')
   .option('-o, --output [file]', 'specify a file to persist environment variables', 'env.json')
+  .command('init', 'initialization environment')
   .parse(process.argv);
 
+const configFilePath = `${process.env.PWD}/.stupidenv.js`;
+// 初始化环境
+if (program.args[0] === 'init') {
+  init(configFilePath);
+}
 
 // 读取配置文件
-let envs = readConfig(`${process.env.PWD}/.stupidenv.js`);
+let envs = readConfig(configFilePath);
 const defaultView = !program.list && !program.all && !program.select
 
 // 开始检查

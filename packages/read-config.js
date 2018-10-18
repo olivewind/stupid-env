@@ -9,7 +9,7 @@ function readConfig(filePath) {
     console.log(chalk.red('No available configuration files found, Please check and try again.'));
     process.exit(0);
   }
-  if (envs.length === 0) {
+  if (!Array.isArray(envs) || envs.length === 0) {
     console.log(chalk.red('No environment, please check the configuration file, Please check and try again.'));
     process.exit(0);
   }

@@ -23,6 +23,7 @@ stupidenv -h               # 帮助
 // 你需要在项目根目录正确配置 ’.stupidenv.js‘ 文件
 module.exports = [
   {
+    name: '182',
     api: 'https://192.168.100.182',
     healthcheck: {
       path: '/dce/healthz', // 默认: '/'
@@ -33,6 +34,7 @@ module.exports = [
     },
   },
   {
+    name: '100',
     api: 'https://192.168.100.100',
     healthcheck: {
       path: '/dce/healthz',
