@@ -3,7 +3,7 @@
 
 [English](README.md) | 简体中文
 
-## 开始
+## 开始
 ``` bash
 npm install -g stupid-env
 ```
