@@ -15,7 +15,7 @@ program
   .option('-a, --all', 'list all environments and select one')
   .option('-s, --select', 'select an available environment directly')
   // .option('-c, --config [file]', 'specify a configuration file', './.stupidenv.js')
-  .option('-o, --output [file]', 'specify a file to persist environment variables', 'env.json')
+  .option('-o, --output [file]', 'specify a file to persist environment variables', '.env.json')
   .command('init', 'initialization environment')
   .parse(process.argv);
 

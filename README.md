@@ -14,7 +14,7 @@ stupidenv -h               # help
   stupidenv -l             # list all environments
   stupidenv -a             # list all environments and choose one
   stupidenv -s             # choose an available environment directly
-  stupidenv -o ./env.json # specify environment variable persistence file，default: ./env.json
+  stupidenv -o ./.env.json # specify environment variable persistence file，default: ./.env.json
 ```
 > Once you have selected an environment, the corresponding environment variables will be properly persisted.
 

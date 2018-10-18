@@ -1,6 +1,6 @@
 {
   "name": "stupid-env",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A cli for checking and quickly switching and persisting environment variables",
   "main": "index.js",
   "bin": {
