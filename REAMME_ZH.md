@@ -19,26 +19,22 @@ stupidenv -h               # 帮助
 
 ``` javascript
 // ./.stupidenv.js
-module.exports = {
-  '3.0.0': [
-    {
-      api: 'https://192.168.100.182',
-      healthcheck: {
-        path: '/dce/healthz', // 默认: '/'
-        isHealthy: function (res) { // 用于检查返回参数的方法
-          return res.data === 'Healthy';
-        },
-        timeout: 2000, // 默认: 2000 ms
+module.exports = [
+  {
+    api: 'https://192.168.100.182',
+    healthcheck: {
+      path: '/dce/healthz', // 默认: '/'
+      isHealthy: function (res) { // 用于检查返回参数的方法
+        return res.data === 'Healthy';
       },
+      timeout: 2000, // 默认: 2000 ms
     },
-  ],
-  '2.0.0': [
-    {
-      api: 'https://192.168.100.100',
-      healthcheck: {
-        path: '/dce/healthz',
-      },
+  },
+  {
+    api: 'https://192.168.100.100',
+    healthcheck: {
+      path: '/dce/healthz',
     },
-  ],
-}
+  },
+];
 ```
