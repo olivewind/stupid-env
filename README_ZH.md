@@ -27,6 +27,9 @@ module.exports = [
     api: 'https://192.168.100.182',
     healthcheck: {
       path: '/dce/healthz', // 默认: '/'
+      headers: {
+        token: 'mytoken',
+      },
       isHealthy: function (res) { // 用于检查返回参数的方法
         return res.data === 'Healthy';
       },

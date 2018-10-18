@@ -7,6 +7,7 @@ const util = require('util');
 function writeEnv(env, filePath) {
   const e = env.env || {};
   e.API_URL = env.api;
+  e.ENV_NAME = env.name;
   const data = JSON.stringify(e, null, 2);
   fs.writeFile(filePath, data, err => {
     if (err) {

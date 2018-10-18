@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 function checkOne(singleEnv) {
-  const { name, api, env = {}, healthcheck } = singleEnv;
+  const { name, api, env = {}, healthcheck = {}} = singleEnv;
   const result = {
     name,
     api,

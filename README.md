@@ -27,6 +27,9 @@ module.exports = [
     api: 'https://192.168.100.182',
     healthcheck: {
       path: '/dce/healthz', // default: '/'
+      headers: {
+        token: 'mytoken',
+      },
       isHealthy: function (res) {
         return res.data === 'Healthy';
       },

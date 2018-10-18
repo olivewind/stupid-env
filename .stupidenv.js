@@ -1,14 +1,32 @@
-
 module.exports = [
   {
-    name: '1.1.1.1',
-    api: 'https://1.1.1.1',
+    name: '2.76',
+    api: 'http://192.168.2.76',
     healthcheck: {
-      path: '/healthz',
+      path: '/dce/healthz',
       isHealthy: function (res) {
-        return res.data === 'Healthy';
+        return res.data.Etcd === 'Healthy' && res.data.Kubernetes === 'Healthy';
       },
-      timeout: 2000,
+    },
+  },
+  {
+    name: '100.193',
+    api: 'http://192.168.100.193',
+    healthcheck: {
+      path: '/dce/healthz',
+      isHealthy: function (res) {
+        return res.data.Etcd === 'Healthy' && res.data.Kubernetes === 'Healthy';
+      },
+    },
+  },
+  {
+    name: '100.100',
+    api: 'http://192.168.100.100',
+    healthcheck: {
+      path: '/dce/healthz',
+      isHealthy: function (res) {
+        return res.data.Etcd === 'Healthy' && res.data.Kubernetes === 'Healthy';
+      },
     },
   },
 ];

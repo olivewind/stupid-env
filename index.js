@@ -6,6 +6,8 @@ const chalk = require('chalk');
 const healthcheck = require('./packages/healthcheck');
 const writeEnv = require('./packages/write-env');
 const readConfig = require('./packages/read-config');
+const readLastEnv = require('./packages/read-lastenv');
+
 const init = require('./packages/init');
 const package = require('./package.json');
 
@@ -20,6 +22,8 @@ program
   .parse(process.argv);
 
 const configFilePath = `${process.env.PWD}/.stupidenv.js`;
+const outputFilePath = `${process.env.PWD}/${program.output}`;
+
 // 初始化环境
 if (program.args[0] === 'init') {
   init(configFilePath);
@@ -64,7 +68,16 @@ healthcheck(envs)
 
 // 检查结束后选择一个环境
 function inquireSelect(envs) {
-  const choices = envs.map(e => {
+  const lastEnv = readLastEnv(outputFilePath) || {};
+  let defaultIndex = 0;
+  const choices = envs.map((e, index) => {
+    if (e.name === lastEnv.ENV_NAME) {
+      defaultIndex = index;
+      return {
+        name: `${e.name}(last time you chose this env)`,
+        value: e,
+      };
+    }
     return {
       name: e.name,
       value: e,
@@ -73,12 +86,13 @@ function inquireSelect(envs) {
 
   inquirer.prompt([
     {
-      name: 'envs',
+      name: 'targetEnv',
       message: 'Please choose an environment:',
       type: 'list',
+      default: defaultIndex,
       choices,
     }])
     .then((answer) => {
-      writeEnv(answer.envs, `${ process.env.PWD}/${program.output}`);
+      writeEnv(answer.targetEnv, outputFilePath);
     });
 }
