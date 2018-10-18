@@ -1,7 +1,7 @@
 {
   "name": "stupid-env",
-  "version": "0.0.4",
-  "description": "A cli for checking and quickly switching stupid development environments",
+  "version": "0.0.5",
+  "description": "A cli for checking and quickly switching and persisting environment variables",
   "main": "index.js",
   "bin": {
     "stupidenv": "./bin/index.js"

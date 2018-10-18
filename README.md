@@ -1,6 +1,8 @@
 # stupid-env
 A cli for checking and quickly switching and persisting environment variables
 
+English | [简体中文](README_ZH.md)
+
 ## Getting started
 ``` bash
 npm install -g stupid-env
@@ -18,7 +20,7 @@ stupidenv -h               # help
 
 
 ``` javascript
-// ./.stupidenv.js
+// You need to properly configure the `.stupidenv.js` file in the project root directory.
 module.exports = [
   {
     api: 'https://192.168.100.182',

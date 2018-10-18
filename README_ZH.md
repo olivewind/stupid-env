@@ -1,6 +1,8 @@
 # stupid-env
 一个用于检查和快速切换和持久化环境变量的命令行工具
 
+[English](README.md) | 简体中文
+
 ## 开始
 ``` bash
 npm install -g stupid-env
@@ -18,7 +20,7 @@ stupidenv -h               # 帮助
 > 一旦你选择了某个环境，那么对应的环境变量将会被正确地持久化
 
 ``` javascript
-// ./.stupidenv.js
+// 你需要在项目根目录正确配置 ’.stupidenv.js‘ 文件
 module.exports = [
   {
     api: 'https://192.168.100.182',
