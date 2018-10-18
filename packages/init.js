@@ -1,7 +1,6 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
-const util = require('util');
 
 const defaultConfig = `
 module.exports = [

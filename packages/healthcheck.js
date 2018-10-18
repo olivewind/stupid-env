@@ -14,7 +14,7 @@ function checkOne(singleEnv) {
     baseURL: singleEnv.api,
   });
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
 
     http.get(healthcheck.path || '/')
       .then(res => {
@@ -25,7 +25,7 @@ function checkOne(singleEnv) {
         }
         result.available = true;
         resolve(result);
-      }, rej => {
+      }, () => {
         result.available = false;
         resolve(result);
       });
@@ -38,7 +38,7 @@ function check(envs) {
     available: [],
   };
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const checkedQueue = [];
 
     envs.forEach(env => {

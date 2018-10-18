@@ -1,7 +1,6 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
-const util = require('util');
 
 // 持久化环境变量
 function writeEnv(env, filePath) {

@@ -2,12 +2,10 @@ const program = require('commander');
 const ora = require('ora');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
-
 const healthcheck = require('./packages/healthcheck');
 const writeEnv = require('./packages/write-env');
 const readConfig = require('./packages/read-config');
 const readLastEnv = require('./packages/read-lastenv');
-
 const init = require('./packages/init');
 const package = require('./package.json');
 
@@ -31,7 +29,7 @@ if (program.args[0] === 'init') {
 
 // 读取配置文件
 let envs = readConfig(configFilePath);
-const defaultView = !program.list && !program.all && !program.select
+const defaultView = !program.list && !program.all && !program.select;
 
 // 开始检查
 const spinner = ora({
