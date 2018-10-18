@@ -5,8 +5,8 @@ const chalk = require('chalk');
 const defaultConfig = `
 module.exports = [
   {
-    name: '1.1.1.1',
-    api: 'https://1.1.1.1',
+    name: '100.100',
+    api: 'http://192.168.100.100',
     healthcheck: {
       path: '/healthz',
       isHealthy: function (res) {
@@ -19,15 +19,23 @@ module.exports = [
 `;
 
 // 初始化环境
-function init(filePath) {
+function init(configFilePath) {
+  // 先看看能不能找到已有的配置文件
   try {
-    fs.writeFileSync(filePath, defaultConfig);
+    fs.readFileSync(configFilePath);
+    console.log(chalk.red('You have already initialized, do not re-initialized.'));
+    process.exit(0);
+  } catch (e) {
+  }
+
+  try {
+    fs.writeFileSync(configFilePath, defaultConfig);
   } catch (error) {
     console.log(chalk.red(`WriteFile error:${error.toString()}`));
     process.exit(0);
     return;
   }
-  console.log(chalk.green(`The environment has been initialized: ${filePath}`));
+  console.log(chalk.green(`The environment has been initialized: ${configFilePath}`));
   process.exit(0);
 }
 
