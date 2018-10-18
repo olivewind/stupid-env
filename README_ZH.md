@@ -26,7 +26,7 @@ module.exports = [
     api: 'https://192.168.100.182',
     healthcheck: {
       path: '/dce/healthz', // 默认: '/'
-      isHealthy: function (res) { // 用于检查返回参数的方法
+      isHealthy: function (res) { // 用于检查返回参数的方法
         return res.data === 'Healthy';
       },
       timeout: 2000, // 默认: 2000 ms
