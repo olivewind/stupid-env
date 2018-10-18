@@ -25,6 +25,9 @@ module.exports = [
   {
     name: '182',
     api: 'https://192.168.100.182',
+    env: {
+      CDN_URL: 'https://192.168.100.182/cdn', // other environment variables that need to be set together
+    },
     healthcheck: {
       path: '/dce/healthz', // default: '/'
       headers: {

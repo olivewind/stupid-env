@@ -24,7 +24,10 @@ stupidenv -h               # 帮助
 module.exports = [
   {
     name: '182',
-    api: 'https://192.168.100.182',
+    api: 'https://192.168.100.182', // 会被合并进 env 成为 API_URL
+    env: {
+      CDN_URL: 'https://192.168.100.182/cdn', // 其他需要一起被设置的环境变量
+    },
     healthcheck: {
       path: '/dce/healthz', // 默认: '/'
       headers: {
