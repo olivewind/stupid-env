@@ -1,5 +1,8 @@
 # stupid-env
-A cli for checking and quickly switching and persisting environment variables
+A cli for checking, fast switching, and persisting environment variables
+
+[![stupid-env](https://img.shields.io/npm/v/stupid-env.svg?style=flat-square)](https://www.npmjs.org/package/stupid-env)
+[![NPM downloads](https://img.shields.io/npm/dt/stupid-env.svg?style=flat-square)](https://npmjs.org/package/stupid-env)
 
 English | [简体中文](README_ZH.md)
 

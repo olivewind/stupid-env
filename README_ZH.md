@@ -1,5 +1,8 @@
 # stupid-env
-一个用于检查和快速切换和持久化环境变量的命令行工具
+一个用于检查、快速切换、持久化环境变量的命令行工具
+
+[![stupid-env](https://img.shields.io/npm/v/stupid-env.svg?style=flat-square)](https://www.npmjs.org/package/stupid-env)
+[![NPM downloads](https://img.shields.io/npm/dt/stupid-env.svg?style=flat-square)](https://npmjs.org/package/stupid-env)
 
 [English](README.md) | 简体中文
 
