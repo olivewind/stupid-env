@@ -8,10 +8,10 @@ function inquireSelect(envs, outputFilePath) {
   const lastEnv = readLastEnv(outputFilePath) || {};
   let defaultIndex = 0;
   const choices = envs.map((e, index) => {
-    if (e.name === lastEnv.ENV_NAME) {
+    if (lastEnv.ENV_NAME && e.name === lastEnv.ENV_NAME) {
       defaultIndex = index;
       return {
-        name: `${e.name}(last time you chose this env)`,
+        name: `${e.name} (CURRENT)`,
         value: e,
       };
     }

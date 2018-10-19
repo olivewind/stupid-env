@@ -6,6 +6,7 @@ const init = require('./packages/init');
 const readConfig = require('./packages/read-config');
 const healthcheck = require('./packages/healthcheck');
 const inquireSelect = require('./packages/inquire-select');
+const readLastEnv = require('./packages/read-lastenv');
 
 program
   .version(package.version)
@@ -38,13 +39,18 @@ const spinner = ora({
 healthcheck(envs)
   .then(res => {
     spinner.stop();
+    const lastenv = readLastEnv(outputFilePath) || {};
     // 列出所有环境
     if (defaultView || program.all || program.list) {
       res.all.forEach(env => {
+        let mes = env.name;
+        if (lastenv.ENV_NAME && lastenv.ENV_NAME === env.name && program.list) {
+          mes = `${mes} (CURRENT)`;
+        }
         if (env.available) {
-          ora().succeed(env.name);
+          ora().succeed(mes);
         } else {
-          ora().fail(env.name);
+          ora().fail(mes);
         }
       });
     }
